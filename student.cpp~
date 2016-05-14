@@ -1,0 +1,27 @@
+Student::Student()
+{
+    first = "";
+    middle = "";
+    last = "";
+    sID = "";
+    school = "";
+    gpa = 0.0;
+}//END DEFAULT CONSTRUCTOR
+
+Student::Student(string first, string middle, string last,
+                 string sID, string school, double gpa)
+{
+    this->first = first;
+    this->middle = middle;
+    this->last = last;
+    this->sID = sID;
+    this->school = school;
+    if (gpa >= 0 && gpa <= 5)
+    {
+        this->gpa = gpa;
+    }
+    else
+    {
+        gpa = 0.0;
+    }
+}//END OVERLOADED CONSTRUCTOR

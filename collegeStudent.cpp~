@@ -1,0 +1,52 @@
+#include "collegeStudent.h"
+#include <iostream>
+using namespace std;
+
+CollegeStudent::CollegeStudent() : Student()
+{
+    major = "";
+    minor = "";
+    isMathReady = false;
+    isEnglishReady = false;
+    year = "Freshman";
+    unitsCompleted = 0;
+}//DEFAULT CONSTRUCTOR
+
+CollegeStudent::CollegeStudent(string first, string middle, string last,
+                               string sID, string school, double gpa,
+                               string major, string minor, bool isMathReady, 
+                               bool isEnglishReady, string year, 
+                               double unitsCompleted)
+                               : Student(first, middle, last,
+                                         sID, school, gpa)
+{
+    this->major = major;
+    this->minor = minor;
+    this->isMathReady = isMathReady;
+    this->isEnglishReady = isEnglishReady;
+    this->year = year;
+    if (unitsCompleted >= 0)
+    {
+        this->unitsCompleted = unitsCompleted;
+    }
+    else
+    {
+        this->unitsCompleted = 0;
+    }
+}//OVERLOADED CONSTRUCTOR
+
+void CollegeStudent::printInfo()
+{
+    cout << "*****COLLEGE STUDENT INFORMATION*****" << endl;
+    cout << "School: " << school << endl;
+    cout << first << " " << middle << " " << last << endl;
+    cout << "Student ID: " << sID << endl;
+    cout << "GPA: " << gpa << endl;
+    cout << "[Major] " << major << " | [Minor] " << minor << endl;
+    cout << "Year: " << year << endl;
+    cout << "Math Ready?: " << isMathReady << endl;
+    cout << "English Ready?: " << isEnglishReady << endl;
+    cout << "Units Completed: " << unitsCompleted;
+    cout << "*************************************" << endl << endl;
+    return;
+}//END PRINT HIGHSCHOOL STUDENT INFO

@@ -1,0 +1,47 @@
+//*******************************
+//Class Name: CollegeStudent
+//Description: Major/Minor, Ready for English and Math?,
+//             Year(FR,SO,JR,SR), # of Units Completed
+//*******************************
+#ifndef COLLEGE_STUDENT_H
+#define COLLEGE_STUDENT_H
+
+#include "student.h"
+#include <string>
+using namespace std;
+
+class CollegeStudent : public Student
+{
+    protected:
+        string major,
+               minor;
+        bool isMathReady,
+             isEnglishReady;
+        string year;
+        double unitsCompleted;
+    public:
+        CollegeStudent();
+        CollegeStudent(string first, string middle, string last,
+                       string sID, string school, double gpa,
+                       string major, string minor, bool isMathReady, 
+                       bool isEnglishReady, string year, 
+                       double unitsCompleted);
+        void printInfo();
+        virtual ~CollegeStudent() {}
+        //GETTERS AND SETTERS================================
+        string getMajor()const{return major;}
+        string getMinor()const{return minor;}
+        bool getIsMathReady()const{return isMathReady;}
+        bool getIsEnglishReady()const{return isEnglishReady;}
+        string getYear()const{return year;}
+        double getUnitsCompleted()const{return unitsCompleted;}
+        void setMajor(string major){this->major = major;}
+        void setMinor(string minor){this->minor = minor;}
+        void setIsMathReady(bool isMathReady){this->isMathReady = isMathReady;}
+        void setIsEnglishReady(bool isEnglishReady){this->isEnglishReady = isEnglishReady;}
+        void setYear(string year){this->year = year;}
+        void setUnitsCompleted(double unitsCompleted){this->unitsCompleted = unitsCompleted;}
+        //GETTERS AND SETTERS================================
+};
+
+#endif //COLLEGE_STUDENT_H

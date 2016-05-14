@@ -1,0 +1,37 @@
+//*******************************
+//Class Name: HighSchoolStudent
+//Description: Grade level, isROPStudent, Math and English Levels
+//*******************************
+#ifndef HIGHSCHOOL_STUDENT_H
+#define HIGHSCHOOL_STUDENT_H
+
+#include "student.h"
+
+class HighSchoolStudent : public Student
+{
+    protected:
+        int grade;
+        bool isROPStudent;
+        int mathLevel,
+            englishLevel;
+    public:
+        HighSchoolStudent();
+        HighSchoolStudent(string first, string middle, string last,
+                          string sID, string school, double gpa,
+                          int grade, bool isROPStudent, 
+                          int mathLevel, int englishLevel);
+        void printInfo();
+        virtual ~HighSchoolStudent() {}
+        //GETTERS AND SETTERS================================
+        int getGrade()const{return grade;}
+        bool getIsROPStudent()const{return isROPStudent;}
+        int getMathLevel()const{return mathLevel;}
+        int getEnglishLevel()const{return englishLevel;}
+        void setGrade(int grade){this->grade = grade;}
+        void setIsROPStudent(bool isROPStudent){this->isROPStudent = isROPStudent;}
+        void setMathLevel(int mathLevel){this->mathLevel = mathLevel;}
+        void setEnglishLevel(int englishLevel){this->englishLevel = englishLevel;}
+        //GETTERS AND SETTERS================================
+};
+
+#endif //HIGHSCHOOL_STUDENT_H
